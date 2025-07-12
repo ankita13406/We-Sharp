@@ -13,8 +13,6 @@ class UserCreate(BaseModel):
     profile_pic_url: Optional[str] = None
     profile_type: Optional[str] = "public"
 
-
-
 class UserOut(BaseModel):
     id: int
     username: str
@@ -61,17 +59,18 @@ class UserPublic(BaseModel):
         from_attributes = True
 
 class SkillRequestBase(BaseModel):
-    from_user_id: int
     to_user_id: int
     skill_offered: str
     skill_requested: str
-    status: str = "pending"
+    message: Optional[str] = None  # ✅ new field
 
 class SkillRequestCreate(SkillRequestBase):
     pass
 
 class SkillRequestResponse(SkillRequestBase):
     id: int
+    from_user_id: int
+    status: str
 
     class Config:
         from_attributes = True

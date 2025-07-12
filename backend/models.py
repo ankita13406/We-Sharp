@@ -28,6 +28,7 @@ class SkillExchangeRequest(Base):
     skill_offered = Column(String)
     skill_requested = Column(String)
     status = Column(String, default="pending")
+    message = Column(String)
 
     from_user = relationship("User", foreign_keys=[from_user_id])
     to_user = relationship("User", foreign_keys=[to_user_id])
