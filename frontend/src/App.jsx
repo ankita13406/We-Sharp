@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import UserProfile from "./pages/UserProfile";
-import SwapRequest from "./pages/SwapRequest";
+import SwapRequests from "./pages/SwapRequests";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<UserProfile />} />
-          <Route path="/swap-requests" element={<SwapRequest />} />
+          <Route path="/swap-requests" element={<SwapRequests />} />
         </Routes>
       </div>
     </Router>
