@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import ProfileCard from "../components/ProfileCard";
 import { Pagination } from "../components/ui/Pagination";
-
+import { useNavigate } from "react-router-dom";
 const DUMMY_PROFILES = [
   {
     id: 1,
@@ -63,6 +63,7 @@ const DUMMY_PROFILES = [
 
 export default function Home() {
   const [profiles, setProfiles] = useState([]);
+  const navigate = useNavigate();
   const [availFilter, setAvailFilter] = useState("All");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -121,11 +122,12 @@ export default function Home() {
 
       {/* Profile cards */}
       <div className="space-y-4">
-        {paged.map((profile) => (
-          <ProfileCard
+         {paged.map((profile) => (
+         <ProfileCard
             key={profile.id}
             profile={profile}
             onRequest={() => alert(`Request sent to ${profile.name}`)}
+            onClick={() => navigate(`/profile/${profile.id}`)}
           />
         ))}
       </div>

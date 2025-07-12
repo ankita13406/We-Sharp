@@ -1,10 +1,11 @@
 import React from "react";
 
-const ProfileCard = ({ profile, onRequest }) => {
+const ProfileCard = ({ profile, onRequest, onClick }) => {
   const { name, skillsOffered, skillsWanted, availability, profilePhoto } = profile;
 
   return (
-    <div className="border p-4 rounded-lg shadow-sm flex justify-between items-center">
+    <div
+      onClick={onClick}      className="flex items-center justify-between p-4 border rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"    >
       <div className="flex gap-4 items-center">
         <img
           src={profilePhoto || "/default-avatar.png"}

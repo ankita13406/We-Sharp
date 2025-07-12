@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import UserProfile from "./pages/UserProfile";
 import SwapRequests from "./pages/SwapRequests";
 import Navbar from "./components/Navbar";
+import ProfileDetail from "./pages/ProfileDetail";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+           <Route path="/profile/:id" element={<ProfileDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<UserProfile />} />
